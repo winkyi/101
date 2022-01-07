@@ -27,7 +27,7 @@ sed -i s#'SystemdCgroup = false'#'SystemdCgroup = true'#g /etc/containerd/config
 
 ```sh
 vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
-Environment="KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock"
+Environment="KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock --pod-infra-container-image=registry.aliyuncs.com/google_containers/pause:3.5"
 ```
 
 ### Restart
